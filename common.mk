@@ -13,6 +13,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# X-Reality
+   PRODUCT_PROPERTY_OVERRIDES += \
+   ro.service.swiqi.supported = true \
+   persist.service.swiqi.enable = 1 \
+   ro.service.swiqi2.supported = true \
+   persist.service.swiqi2.enable = 1 \
+   ro.service.swiqi3.supported = true \
+   persist.service.swiqi3.enable = 1
+
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
@@ -49,6 +58,13 @@ PRODUCT_COPY_FILES += \
    vendor/zos/prebuilt/common/addon.d/95-LolliViPER.sh:system/addon.d/95-LolliViPER.sh \
    vendor/zos/prebuilt/common/su.d/50viper.sh:system/su.d/50viper.sh \
    vendor/zos/prebuilt/common/app/Viper4Android/Viper4Android.apk:system/priv-app/Viper4Android/Viper4Android.apk 
+
+# Sony Bravia
+PRODUCT_COPY_FILES += \
+    vendor/zos/prebuilt/common/etc/be_movie:system/etc/be_movie \
+    vendor/zos/prebuilt/common/etc/be_photo:system/etc/be_photp \
+    vendor/zos/prebuilt/common/framework/com.sonyericsson.android.SwIqiBmp.jar:system/framework/com.sonyericsson.android.SwIqiBmp.jar \
+    vendor/zos/prebuilt/common/etc/permissions/com.sonyericsson.android.SwIqiBmp.xml:system/etc/permission/com.sonyericsson.android.SwIqiBmp.xml
    
 # Layers Manager
 PRODUCT_COPY_FILES += \
