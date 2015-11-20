@@ -89,7 +89,6 @@ PRODUCT_PACKAGES += \
 # Required Packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    CellBroadcastReceiver \
     su \
     Snap \
     Eleven \
@@ -149,3 +148,5 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 
 PRODUCT_PACKAGES += \
 	messaging
+
+include vendor/zos/config/optimizations/sm.mk
