@@ -42,6 +42,13 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
    vendor/zos/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/zos/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
+# Viper4Android
+PRODUCT_COPY_FILES += \
+   vendor/zos/prebuilt/common/bin/audio_policy.sh:system/audio_policy.sh \
+   vendor/zos/prebuilt/common/addon.d/95-LolliViPER.sh:system/addon.d/95-LolliViPER.sh \
+   vendor/zos/prebuilt/common/su.d/50viper.sh:system/su.d/50viper.sh \
+   vendor/zos/prebuilt/common/app/Viper4Android/Viper4Android.apk:system/priv-app/Viper4Android/Viper4Android.apk 
    
 # Layers Manager
 PRODUCT_COPY_FILES += \
