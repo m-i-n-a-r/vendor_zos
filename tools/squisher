@@ -4,14 +4,45 @@
 . $ANDROID_BUILD_TOP/vendor/zos/tools/colors
 
 OUT_TARGET_HOST=`uname -s`
+
+if [ x"$OUT_TARGET_HOST" = x"Linux" ]
+then
+ export CORES="$(cat /proc/cpuinfo | grep -c processor)";
+elif [ x"$OUT_TARGET_HOST" = x"Darwin" ]
+then
+ export CORES="sysctl hw.ncpu | awk '{print $2}'";
+fi
+
+if [ $CORES = "4" ];
+then
+    export SQSHRJOBS="6";
+elif [ $CORES = "6" ];
+then
+    export SQSHRJOBS="8";
+elif [ $CORES = "8" ];
+then
+    export SQSHRJOBS="10";
+elif [ $CORES = "10" ];
+then
+    export SQSHRJOBS="12";
+elif [ $CORES = "12" ];
+then
+    export SQSHRJOBS="14";
+elif [ $CORES = "14" ];
+then
+    export SQSHRJOBS="16";
+else
+    export SQSHRJOBS="$CORES";
+fi;
+
 if [ x"$OUT_TARGET_HOST" = x"Linux" ]
 then
    OUT_TARGET_HOST=linux-x86
-   XARGS="xargs --max-args=1 --max-procs `grep 'processor' /proc/cpuinfo|wc -l`"
+   XARGS="xargs --max-args=1 --max-procs $SQSHRJOBS"
 elif [ x"$OUT_TARGET_HOST" = x"Darwin" ]
 then
    OUT_TARGET_HOST=darwin-x86
-   XARGS="xargs -n 1 -P `sysctl hw.ncpu | awk '{print $2}'`"
+   XARGS="xargs -n 1 -P $SQSHRJOBS"
 else
    echo -e ${red}"ERROR: unknown/unsupported host OS!"${txtrst}
    exit 1
