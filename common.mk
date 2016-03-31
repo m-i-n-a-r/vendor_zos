@@ -37,6 +37,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/zos/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/zos/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+   vendor/zos/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+   vendor/zos/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
    
 # Layers Manager
 PRODUCT_COPY_FILES += \
