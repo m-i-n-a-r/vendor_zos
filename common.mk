@@ -113,9 +113,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     su \
-    Snap \
-    Eleven \
-    CMFileManager 
+    Eleven 
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
