@@ -49,8 +49,10 @@ PRODUCT_COPY_FILES +=  \
 
 # CameraNext
 PRODUCT_COPY_FILES += \
-    vendor/zos/prebuilt/common/addon.d/95-cmcam.sh:system/addon.d/95-cmcam.sh \
+    vendor/zos/prebuilt/common/addon.d/99-Univ_Cam_libs.sh:system/addon.d/99-Univ_Cam_libs.sh \
     vendor/zos/prebuilt/common/lib/libjni_mosaic_next.so:system/lib/libjni_mosaic_next.so \
+    vendor/zos/prebuilt/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic_next.so \
+    vendor/zos/prebuilt/common/lib/libjni_tinyplanet.so:system/lib/libjni_tinyplanet_next.so \
     vendor/zos/prebuilt/common/lib/libjni_tinyplanet_next.so:system/lib/libjni_tinyplanet_next.so \
     vendor/zos/prebuilt/common/app/CameraNext/CameraNext.apk:system/app/CameraNext/CameraNext.apk
 
