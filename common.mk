@@ -47,15 +47,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/zos/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/zos/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
-# CameraNext
-PRODUCT_COPY_FILES += \
-    vendor/zos/prebuilt/common/addon.d/99-Univ_Cam_libs.sh:system/addon.d/99-Univ_Cam_libs.sh \
-    vendor/zos/prebuilt/common/lib/libjni_mosaic_next.so:system/lib/libjni_mosaic_next.so \
-    vendor/zos/prebuilt/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic_next.so \
-    vendor/zos/prebuilt/common/lib/libjni_tinyplanet.so:system/lib/libjni_tinyplanet_next.so \
-    vendor/zos/prebuilt/common/lib/libjni_tinyplanet_next.so:system/lib/libjni_tinyplanet_next.so \
-    vendor/zos/prebuilt/common/app/CameraNext/CameraNext.apk:system/app/CameraNext/CameraNext.apk
-
 # SuperSU
 PRODUCT_COPY_FILES += \
    vendor/zos/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
