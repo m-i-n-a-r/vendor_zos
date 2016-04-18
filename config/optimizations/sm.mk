@@ -17,9 +17,6 @@
 # TARGET_SM_AND can be set before this file to override the default of gcc 4.8 for ROM.
 # This is to avoid hardcoding the gcc versions for the ROM and kernels.
 
- TARGET_SM_AND := $(TARGET_GCC_VERSION)
- TARGET_SM_KERNEL := $(TARGET_GCC_VERSION_KERNEL)
-
  # Set GCC colors
  export GCC_COLORS := 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -30,10 +27,6 @@
 
  TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_SM_AND)/lib
  export TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_SM_AND)/lib
-
- # Path to ROM toolchain
- SM_AND_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-$(TARGET_SM_AND)
- SM_AND := $(shell $(SM_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
 
  # Find strings in version info
  SM_AND_NAME := $(filter %sabermod,$(SM_AND))
@@ -49,10 +42,6 @@
    PRODUCT_PROPERTY_OVERRIDES += \
      ro.sm.android=$(SM_AND_VERSION)
  endif
-
- # Path to kernel toolchain
- SM_KERNEL_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-$(TARGET_SM_KERNEL)
- SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/arm-eabi-gcc --version)
 
  SM_KERNEL_NAME := $(filter %sabermod,$(SM_KERNEL))
  SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_KERNEL))

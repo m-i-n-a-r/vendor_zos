@@ -170,4 +170,7 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 PRODUCT_PACKAGES += \
 	messaging
 
+# Optimizations
 include vendor/zos/config/optimizations/sm.mk
+include vendor/zos/config/optimizations/optimizations.mk
+
