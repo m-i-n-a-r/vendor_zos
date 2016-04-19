@@ -172,5 +172,4 @@ PRODUCT_PACKAGES += \
 
 # Optimizations
 include vendor/zos/config/optimizations/sm.mk
-include vendor/zos/config/optimizations/optimizations.mk
 
